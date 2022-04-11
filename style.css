@@ -19,6 +19,10 @@ img {
     padding: 20px;
 }
 
+p {
+    line-height: 1.5;
+}
+
 .nav__container {
     display: flex;
     justify-content: space-between;
@@ -142,6 +146,10 @@ Highlights
 
 */
 
+#highlight:before {
+    
+}
+
 .highlight__wrapper {
     display: flex;
     align-items: center;
@@ -158,6 +166,7 @@ Highlights
 
 .highlight__para {
     text-align: center;
+    max-width: 280px;
 }
 
 .highlight__img {
