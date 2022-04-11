@@ -226,3 +226,7 @@ Highlights
     height: 1000px;
     background-color: #e4fadc;
 }
+
+.book__img {
+    max-height: 380px;
+}
