@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -95,6 +95,11 @@ li {
     text-align: center;
     border: none;
     color: #4cc821;
+    display: none;
+}
+
+.btn__menu:hover {
+    background-color: transparent;
 }
 
 .menu__backdrop {
@@ -102,13 +107,28 @@ li {
     background-color: #242424;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
     z-index: 100;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
+    justify-content: center;
+    visibility: hidden;
+    transition: all 300ms ease;
+    opacity: 0;
+    transform: translate(100%);
+  }
+  
+  .menu--open {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .menu--open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0);
+  }
 
 .menu__links {
     display: flex;
@@ -224,7 +244,7 @@ Highlights
 
 #highlights {
     position: relative;
-    max-width: 100vw;
+    max-width: 100%;
 }
 
 #highlights:before,
@@ -232,7 +252,7 @@ Highlights
     background: url('./assets/wave.svg');
     content: "";
     position: absolute;
-    width: 101vw;
+    width: 100%;
     height: 12vw;
     left: 0;
     z-index: 1;
@@ -253,6 +273,7 @@ Highlights
 
 .highlight__wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .highlight {
@@ -260,7 +281,6 @@ Highlights
     width: calc(100% / 3);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     z-index: 1;
 }
@@ -286,6 +306,7 @@ Highlights
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 /* Features */
@@ -382,6 +403,45 @@ footer__list {
     padding: 0 8px;
 }
 
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .header__description {
+      padding: 0 24px;
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    h2 {
+      font-size: 26px;
+    }
+  
+    button {
+      font-size: 18px;
+    }
+  
+    .book {
+      width: 50%;
+    }
+  }
+
 /* Small phones, tablets, smartphones */
 
-@media
+@media (max-width: 550px) {
+        .btn__menu {
+          display: block;
+        }
+      
+        .nav__links {
+          display: none;
+        }
+      
+        .highlight {
+          width: 100%;
+        }
+      
+        .highlight:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
